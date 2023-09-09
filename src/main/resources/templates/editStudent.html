@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+</head>
+<body>
+<div>
+  <h1>Add Student</h1>
+</div>
+<form th:action="@{/students/{id}(id=${student.id})}" method="POST" th:object="${student}">
+  <div>
+    <label>First Name</label>
+    <input
+            type="text"
+            placeholder="${student.firstName}"
+            th:field="*{firstName}"
+    >
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input
+            type="text"
+            placeholder="${student.lastName}"
+            th:field="*{lastName}"
+    >
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input
+            type="email"
+            placeholder="${student.email}"
+            th:field="*{email}"
+    >
+  </div>
+  <div>
+    <button type="submit">Update Student</button>
+  </div>
+</form>
+</body>
+</html>
